@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aroma de Vita</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .header {
+      background-color: #f2e9e4;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #b08968;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 1.8rem;
+      color: #6d4c41;
+      font-weight: bold;
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #6d4c41;
+      font-weight: bold;
+    }
+    .search-cart {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .search input {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .cart {
+      position: relative;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background-color: #a1887f;
+      color: white;
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+    .hero {
+      background: url(imagenes/cereza.jpg) center/cover no-repeat;
+      text-align: center;
+      color: #4e342e;
+      padding: 6rem 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .productos, .pagos {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .producto {
+      width: 200px;
+      background-color: #fdf6f0;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .producto img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      background-color: white;
+      padding: 10px;
+    }
+    .producto h3 {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .producto p {
+      color: #6d4c41;
+      font-weight: bold;
+    }
+    .pagos img {
+      width: 50px;
+      margin: 0.5rem;
+      object-fit: contain;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #eee0d1;
+      text-align: center;
+      padding: 1.5rem;
+      color: #5d4037;
+    }
+  </style>
+</head>
+<body>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo">Aroma de Vita</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#perfumes">Perfumes</a></li>
+        <li><a href="#pagos">Pagos</a></li>
+      </ul>
+    </nav>
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Buscar perfume..." />
+      <button onclick="buscarProducto()">🔍</button>
+    </div>
+    <div class="cart">
+      🛒<span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <h2>Alanis Rocha Allison Marely</h2>
+    <h2>García Hernández Maria Joselyne</h2>
+    <h1>Aroma de Vita</h1>
+    <p>Fragancias que te definen</p>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos" id="perfumes">
+    <h2>Nuestra Colección</h2>
+    <div class="grid">
+      <div class="producto"><img src="imagenes/04c0fc33e4126b07feda0cbb81727dfc.jpg" alt="Perfume 1"><h3>Romance by Vita</h3><p></p></div>
+      <div class="producto"><img src="imagenes/botella-de-perfume-sin-marca-en-podio-vidrio-y-hierbas-marrones-lagurus-transparente-para-etiqueta-eau-toilette-maqueta-212013101.webp" alt="Perfume 2"><h3>Noir Sensation</h3><p></p></div>
+      <div class="producto"><img src="imagenes/frasco40.jpg" alt="Perfume 3"><h3>Esencia Floral</h3><p></p></div>
+      <div class="producto"><img src="imagenes/OIP.jpeg" alt="Perfume 4"><h3>Luz de Luna</h3><p></p></div>
+      <div class="producto"><img src="imagenes/perfumes-mujeres-poderosas-3.jpg" alt="Perfume 5"><h3>Amore</h3><p></p></div>
+
+      <!-- NUEVOS PERFUMES SIN PRECIO -->
+      <div class="producto"><img src="imagenes/R.jpeg" alt="Perfume 6"><h3>Brisa Oriental</h3></div>
+      <div class="producto"><img src="imagenes/social.30903.jpg" alt="Perfume 7"><h3>Jardín Secreto</h3></div>
+      <div class="producto"><img src="imagenes/16535989597727.jpg" alt="Perfume 8"><h3>Vita Passion</h3></div>
+      <div class="producto"><img src="imagenes/OIP (1).jpeg" alt="Perfume 9"><h3>Encanto Místico</h3></div>
+      <div class="producto"><img src="imagenes/perfume-dulce-9.jpg" alt="Perfume 10"><h3>Flor del Alba</h3></div>
+    </div>
+  </section>
+
+  <!-- MÉTODOS DE PAGO -->
+  <section class="pagos" id="pagos">
+    <h2>Métodos de Pago</h2>
+    <div class="grid">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+    </div>
+    <p style="margin-top:1rem; font-size:0.9rem">También aceptamos transferencias bancarias.</p>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 Aroma de Vita - Todos los derechos reservados.</p>
+    <p>Contáctanos: 55 1030 3055</p>
+  </footer>
+
+  <script>
+    // Añadir productos al carrito
+    const cartCount = document.getElementById('cartCount');
+    let count = 0;
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('.producto')) {
+        count++;
+        cartCount.textContent = count;
+      }
+    });
+
+    // Búsqueda de productos
+    function buscarProducto() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(producto => {
+        const nombre = producto.querySelector('h3').textContent.toLowerCase();
+        if (nombre.includes(input)) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
